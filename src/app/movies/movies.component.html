@@ -1,20 +1,28 @@
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid" style="background-color: #4b296b;
+color: #a7a2a9;">
   <div class="container">
     <h1 class="display-4">{{pageTitle}}</h1>
     <p class="lead">{{pageDiscription}}</p>
   </div>
 </div>
-<div *ngFor='let item of myMovies'>
-  <div class="col-md">
-    <div class="card" style="width: 20rem;">
-      <img src="..." class="card-img-left" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{results.results.title}}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <button class="btn btn-primary" (click)="pageFunc()">
-          Movies
-        </button>
+<div class="row" style="width: 70%;
+ text-align: center;
+ margin-left: 15%;">
+  <div *ngFor='let item of movies.results'>
+
+    <div class="col-md">
+      <div class="card" style="width: 14rem;
+      background-color: #4C212A;
+      padding: 3px 3px;
+      margin-bottom: 12px ;">
+        <img [src]="'https://image.tmdb.org/t/p/w185_and_h278_bestv2'+item.poster_path" class="card-img-left"
+          alt="item.title">
+        <div class="card-body">
+          <h3 class="card-title"style="color: #a7a2a9;">{{item.title}}</h3>
+          <p class="card-text" style="font-size: 12pt;
+          color: #a7a2a9;">{{item.release_date}}</p>
+          <p class="card-text" style="font-size: 10pt;" style="color: #a7a2a9;">{{item.overview}}</p>
+        </div>
       </div>
     </div>
   </div>
