@@ -5,16 +5,22 @@ color: #a7a2a9;">
     <p class="lead">{{pageDiscription}} </p>
   </div>
 </div>
-<div class="row" style="width: 70%;
-  text-align: center;
-  margin-left: 15%">
+<div class="row" style="width: 65%;
+  text-align: left;
+  margin-left: 17.5%">
   <div *ngFor="let item of shows.results">
     <div class="col-md">
-      <div class="card" style="width: 14rem;
+      <div class="card" style="width: 18rem;
       background-color: #4C212A;
       padding: 3px 3px;
       margin-bottom: 12px ;" >
-        <img [src]="'https://image.tmdb.org/t/p/w185_and_h278_bestv2'+item.poster_path" class="card-img-left" alt="...">
+        <img [src]="'https://image.tmdb.org/t/p/w185_and_h278_bestv2'+item.poster_path" 
+        class="card-img-top" 
+        style="width: 15rem;
+        height: auto;
+        margin-left: 1.3rem;
+        margin-top: 1rem;"
+        alt="item.original_name">
         <div class="card-body">
           <h3 class="card-title" style="color: #a7a2a9;">{{item.original_name}}</h3>
           <p class="card-text" style="font-size: 12pt;
